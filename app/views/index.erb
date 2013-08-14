@@ -1,6 +1,18 @@
 <div class="container">
-
+  <strong><h1> Welcome to the TerrorDome!</h1></strong>
+  <% if logged_in? %>
+    <% unless @users.blank? %>
+      <ul class ="nostyle">
+        <% @users.each do |t| %>
+          <li><%= t.name %> - <%= t.email%></li>
+        <% end %>
+    <% end %>
+    </ul>
+  <% else %>
+    <em><h2> Prepare to be Authenticated!</h2></em>
+  <% end %>
+</div>
   <%# TODO: 
   1. If user is not signed in - display "Welcome".
   2. If user is signed in then  display all users %>
-</div>
+
