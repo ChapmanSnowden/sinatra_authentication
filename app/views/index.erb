@@ -2,7 +2,7 @@
   <strong><h1> Welcome to the TerrorDome!</h1></strong>
   <% if logged_in? %>
     <% unless @users.blank? %>
-      <ul class ="nostyle">
+      <ul class ="title">
         <% @users.each do |t| %>
           <li><%= t.name %> - <%= t.email%></li>
         <% end %>

@@ -13,7 +13,7 @@ get '/sessions/new' do
 end
 
 post '/sessions' do
-  if user = User.authenticate(params[:email], params[:password])
+  if user = User.verify(params[:email], params[:password])
     session[:user_id] = user.id
     redirect '/'
   else
